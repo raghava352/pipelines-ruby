@@ -18,6 +18,9 @@ steps:
   inputs:
     versionSpec: '>= 2.3'
 
+- script: gem install rails && rails -v
+  displayName: 'gem install rails'
+
 - script: |
     gem install bundler
     bundle install --retry=3 --jobs=4
@@ -44,4 +47,4 @@ steps:
   inputs:
     azureSubscription: $(serviceConnectionToAzure)
     WebAppName: $(appName)
-    Package: $(System.ArtifactsDirectory)/**/*.zip
+    Package: $(System.ArtifactsDirectory)/

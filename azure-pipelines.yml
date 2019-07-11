@@ -47,3 +47,4 @@ steps:
   inputs:
     azureSubscription: $(serviceConnectionToAzure)
     WebAppName: $(appName)
+    Package: '$(System.DefaultWorkingDirectory)'
